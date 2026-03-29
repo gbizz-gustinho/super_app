@@ -1,0 +1,33 @@
+{% extends "base_site.html" %}
+
+{% block content %}
+<div class="min-h-[60vh] flex items-center justify-center py-10 px-4">
+    <div class="max-w-sm w-full bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-slate-700">
+        
+        <div class="text-center mb-8">
+            <img class="mx-auto h-12 w-auto mb-4" src="{{ url_for('static', filename='img/xMei PJ 150transp.png') }}" alt="Logo xMei PJ ">
+            <h2 class="text-2xl font-black text-gray-900 dark:text-white uppercase tracking-tighter">Acesso</h2>
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">xMei PJ  2026</p>
+        </div>
+
+        <form action="{{ url_for('auth.login') }}" method="POST" class="space-y-4">
+            {% with label='E-mail', name='email', type='email', placeholder='seu@email.com', required=True %}
+                {% include 'components/_auth_input.html' %}
+            {% endwith %}
+            
+            {% with label='Senha', name='senha', type='password', id='login_pass', placeholder='********', required=True %}
+                {% include 'components/_auth_input.html' %}
+            {% endwith %}
+
+            <button type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-black text-sm rounded-xl transition-all uppercase tracking-widest shadow-lg shadow-blue-500/20">
+                Entrar no Painel
+            </button>
+        </form>
+
+        <div class="mt-6 text-center space-y-2">
+            <a href="{{ url_for('site_bp.cadastro_gratis') }}" class="block text-[11px] font-black text-blue-600 dark:text-blue-400 hover:underline uppercase">Criar conta grátis</a>
+            <a href="#" class="block text-[10px] font-bold text-slate-400 uppercase">Esqueci a senha</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

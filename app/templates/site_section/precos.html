@@ -1,0 +1,41 @@
+{% extends "base_site.html" %}
+
+{% block content %}
+<section class="text-center mb-10">
+    <h1 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 uppercase tracking-tighter">
+        Planos xMei PJ  <span class="text-amber-400">2026</span>
+    </h1>
+</section>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto pb-20 px-4">
+    {% with nome='Grátis', preco='R$ 0', periodo='/7 DIAS', features=['2 Veículos', 'Teste Completo'], botao_texto='Testar', link=url_for('site_bp.cadastro_gratis') %}
+        {% include 'components/_pricing_card.html' %}
+    {% endwith %}
+
+    {% with 
+        nome='Bronze', 
+        preco='R$ 99', 
+        periodo='/MÊS', 
+        features=['1 a 5 Veículos', 'Relatórios Básicos', 'Suporte por E-mail', 'Gestão de Gastos'], 
+        botao_texto='Assinar', 
+        link='#' 
+    %}
+        {% include 'components/_pricing_card.html' %}
+    {% endwith %}
+
+    {% with nome='Prata', preco='R$ 199', periodo='/MÊS', features=['Até 10 Veículos', 'Gestão Total'], popular=True, botao_texto='Assinar' %}
+        {% include 'components/_pricing_card.html' %}
+    {% endwith %}
+
+    {% with 
+        nome='Ouro', 
+        preco='CONSULTE-NOS', 
+        periodo='', 
+        features=['Acima de 10 Veículos', 'Froutes Ilimitadas', 'Painel Multi-Empresa', 'Suporte VIP 24h'], 
+        botao_texto='Falar com Consultor', 
+        link=url_for('site_bp.contato') 
+    %}
+        {% include 'components/_pricing_card.html' %}
+    {% endwith %}
+</div>
+{% endblock %}

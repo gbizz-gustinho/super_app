@@ -1,0 +1,29 @@
+{% extends "base_site.html" %}
+
+{% block title %}xMei PJ  - Tecnologia{% endblock %}
+
+{% block content %}
+<section class="text-center mb-12">
+    <h1 class="text-3xl md:text-4xl font-black text-blue-600 dark:text-blue-400 uppercase tracking-tighter">
+        TECNOLOGIA <span class="text-amber-400">xMei PJ </span>
+    </h1>
+    <p class="text-slate-500 dark:text-slate-400 mt-2 font-bold text-sm md:text-base uppercase tracking-widest">Poder bruto para sua operação</p>
+</section>
+
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-20 max-w-6xl mx-auto">
+    {% set funcs = [
+    {'icon': 'fa-chart-line', 'title': 'Monitoramento', 'desc': 'Acompanhe seus veículos e motoristas com precisão cirúrgica.'},
+    {'icon': 'fa-satellite-dish', 'title': 'Telemetria', 'desc': 'Localização, velocidade e consumo real direto na sua tela.'},
+    {'icon': 'fa-calculator', 'title': 'Controle Contábil', 'desc': 'Gestão de ativos com cálculo automático de depreciação.'},
+    {'icon': 'fa-gas-pump', 'title': 'Consumo Médio', 'desc': 'Métricas precisas de gasto por KM rodado.'},
+    {'icon': 'fa-video', 'title': 'Vídeo Telemetria', 'desc': 'Imagens de alta resolução integradas aos dados reais de condução.'},
+    {'icon': 'fa-chart-bar', 'title': 'Ticket Médio', 'desc': 'Análise de rentabilidade por frete e desempenho por veículo.'}
+] %}
+
+    {% for item in funcs %}
+        {% with icon=item.icon, title=item.title, desc=item.desc %}
+            {% include 'components/_tech_card.html' %}
+        {% endwith %}
+    {% endfor %}
+</section>
+{% endblock %}

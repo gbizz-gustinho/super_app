@@ -1,0 +1,29 @@
+{% extends "base_site.html" %}
+
+{% block content %}
+<div class="max-w-sm mx-auto my-12 bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-2xl border border-slate-100 dark:border-slate-700 relative">
+    <h3 class="text-xl font-black text-center mb-6 text-blue-600 dark:text-blue-400 uppercase tracking-tight">Iniciar Teste Grátis</h3>
+    
+    <form action="{{ url_for('site_bp.processar_cadastro_teste') }}" method="POST" class="space-y-4">
+        {% with label='Nome', name='nome', placeholder='Nome Completo', required=True %}
+            {% include 'components/_auth_input.html' %}
+        {% endwith %}
+
+        {% with label='E-mail', name='email', type='email', placeholder='E-mail', required=True %}
+            {% include 'components/_auth_input.html' %}
+        {% endwith %}
+
+        {% with label='Senha', name='senha', type='password', id='reg_pass', placeholder='Mínimo 6 dígitos', required=True %}
+            {% include 'components/_auth_input.html' %}
+        {% endwith %}
+
+        <button type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-black rounded-xl text-sm uppercase tracking-widest mt-4">
+            Criar Minha Conta
+        </button> 
+    </form>
+
+    <p class="text-center text-[10px] text-slate-400 font-bold uppercase mt-6">
+        Já tem conta? <a href="{{ url_for('auth.login') }}" class="text-blue-500 hover:underline">Faça Login</a>
+    </p>
+</div>
+{% endblock %}

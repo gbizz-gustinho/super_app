@@ -1,0 +1,47 @@
+<!-- _sidebar.html ATUALIZADO -->
+<aside id="sidebar" 
+       class="fixed inset-y-0 left-0 z-30 w-64 transform -translate-x-full transition-transform duration-300 ease-in-out 
+              bg-white dark:bg-slate-900/80 backdrop-blur-md border-r border-slate-200 dark:border-slate-800 
+              lg:translate-x-0">
+    
+            <!-- HEADER DA SIDEBAR CORRIGIDO -->
+            <div class="flex items-center justify-center h-16 border-b border-slate-200 dark:border-slate-800">
+                <a href="{{ url_for('site_bp.index') }}">
+                    <img src="{{ url_for('static', filename='img/logo5.png') }}" class="h-14 w-auto" alt="xMei-Pj Logo">
+                </a>
+            </div>
+
+    <nav class="p-4">
+    <h3 class="px-3 text-xs font-semibold text-slate-500 uppercase tracking-wider">Menu</h3>
+    <div class="mt-2 space-y-1">
+        <a href="#" class="group flex items-center px-3 py-2 text-sm font-medium rounded-md ...">
+            <span class="w-6 text-center mr-2">🏠</span> Home
+        </a>
+        <a href="#" class="group flex items-center px-3 py-2 text-sm font-medium rounded-md ...">
+            <span class="w-6 text-center mr-2">💡</span> Funcionalidades
+        </a>
+        <a href="#" class="group flex items-center px-3 py-2 text-sm font-medium rounded-md ...">
+            <span class="w-6 text-center mr-2">🏆</span> Benefícios
+        </a>
+        <a href="#" class="group flex items-center px-3 py-2 text-sm font-medium rounded-md ...">
+            <span class="w-6 text-center mr-2">💰</span> Preços
+        </a>
+        <a href="#" class="group flex items-center px-3 py-2 text-sm font-medium rounded-md ...">
+            <span class="w-6 text-center mr-2">✉️</span> Contato
+        </a>
+    </div>
+</nav>
+    
+    <div class="absolute bottom-4 left-4 right-4">
+        <button id="theme-toggle" class="w-full flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium rounded-md text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+            
+            <!-- Ícone para Tema Claro (Sol) - Mostrado por padrão -->
+            <span class="dark:hidden">☀️</span>
+            
+            <!-- Ícone para Tema Escuro (Lua) - Escondido por padrão, aparece no modo dark -->
+            <span class="hidden dark:inline">🌙</span>
+
+            <span>Alternar Tema</span>
+        </button>
+    </div>
+</aside>

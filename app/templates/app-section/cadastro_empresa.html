@@ -1,0 +1,39 @@
+{% extends "base_site.html" %}
+
+{% block content %}
+<section class="text-center mb-8">
+    <h1 class="text-3xl font-black text-blue-600 dark:text-blue-400 uppercase tracking-tighter">
+        <i class="fa-solid fa-building-flag mr-2"></i> Configurar Empresa
+    </h1>
+    <p class="text-slate-500 dark:text-slate-400 font-bold uppercase text-[10px] tracking-[0.2em] mt-2">
+        Passo obrigatório para gestão de frota.
+    </p>
+</section>
+
+<div class="max-w-xl mx-auto bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-700 mb-20">
+    <form action="{{ url_for('frota_bp.setup_empresa') }}" method="POST" class="space-y-4">
+        
+        {% with label='Razão Social / Nome da Frota', name='razao_social', placeholder='EX: xMei PJ  TRANSPORTES LTDA', required=True %}
+            {% include 'components/_auth_input.html' %}
+        {% endwith %}
+
+        {% with label='CNPJ (Opcional no Teste)', name='cnpj', placeholder='00.000.000/0000-00' %}
+            {% include 'components/_auth_input.html' %}
+        {% endwith %}
+
+        <div class="grid grid-cols-2 gap-4">
+            {% with label='Município', name='municipio', placeholder='Cidade' %}
+                {% include 'components/_auth_input.html' %}
+            {% endwith %}
+            
+            {% with label='Estado (UF)', name='uf', placeholder='Ex: SP' %}
+                {% include 'components/_auth_input.html' %}
+            {% endwith %}
+        </div>
+
+        <button type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-black text-sm rounded-xl transition-all uppercase tracking-widest mt-4 shadow-lg shadow-blue-500/20">
+            Acessar Dashboard
+        </button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base_site.html" %}
+
+{% block content %}
+<section class="text-center mb-16">
+    <h1 class="text-4xl md:text-6xl font-black text-blue-600 dark:text-blue-400 uppercase tracking-tighter">
+        POR QUE <span class="text-amber-400">ESCOLHER xMei PJ ?</span>
+    </h1>
+</section>
+
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-24 px-4 max-w-7xl mx-auto">
+    {% set itens = [
+    {'icon': 'fa-hand-holding-dollar', 'title': 'Redução de Custos', 'desc': 'Otimize combustível e minimize manutenções preventivas.'},
+    {'icon': 'fa-shield-halved', 'title': 'Segurança', 'desc': 'Monitore o comportamento e garanta a proteção total da carga.'},
+    {'icon': 'fa-bolt', 'title': 'Produtividade', 'desc': 'routes inteligentes e monitoramento garantem mais entregas em menos tempo.'},
+    {'icon': 'fa-brain', 'title': 'Decisão Inteligente', 'desc': 'Relatórios detalhados e dados precisos para decisões estratégicas e proativas.'},
+    {'icon': 'fa-file-shield', 'title': 'Conformidade', 'desc': 'Mantenha a documentação e requisitos legais da frota sempre em dia.'},
+    {'icon': 'fa-rocket', 'title': 'Inovação 2026', 'desc': 'Tecnologia de ponta preparada para os desafios logísticos do futuro agora.'}
+] %}
+
+    {% for item in itens %}
+        {% with icon=item.icon, title=item.title, desc=item.desc %}
+            {% include 'components/_tech_card.html' %}
+        {% endwith %}
+    {% endfor %}
+</section>
+{% endblock %}
