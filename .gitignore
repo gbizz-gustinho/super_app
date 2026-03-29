@@ -1,0 +1,36 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build / Output
+dist/
+build/
+.cache/
+.tmp/
+
+# TailwindCSS
+tailwindcss.exe
+*.css.map
+
+# Ambiente
+.env
+.env.local
+.env.*.local
+
+# Banco de dados / arquivos grandes
+*.db
+*.db.sql
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
